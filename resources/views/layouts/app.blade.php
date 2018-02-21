@@ -29,10 +29,10 @@
                     <div class="collapse navbar-collapse " id="CodeNation">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
+                            <li class="nav-item {{ (Request::is('/') ? 'active' : '') }}">
                                 <a class="nav-link" href="{{ url('/') }}">Home</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown {{ (Request::is('post') ? 'active' : '') }}">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Hire Freelancers
                                 </a>
@@ -48,22 +48,22 @@
                                     <a class="dropdown-item" href="{{ url('/discover/community') }}">Community</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown {{ (Request::is('browse') ? 'active' : '') }}">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Find Work
                                 </a>
                                 <div class="dropdown-menu mr-4" aria-labelledby="navbarDropdown">
                                     <p class="dropdown-item mb-0 text-uppercase font-weight-bold">Find Work</p>
-                                    <a class="dropdown-item" href="{{ url('/browse/project') }}">Browse Projects</a>
-                                    <a class="dropdown-item" href="{{ url('/browse/contest') }}">Browse Contest</a>
-                                    <a class="dropdown-item" href="{{ url('/browse/categories') }}">Browse Categories</a>
+                                    <a class="dropdown-item" href="{{ url('browse/project') }}">Browse Projects</a>
+                                    <a class="dropdown-item" href="{{ url('browse/contest') }}">Browse Contest</a>
+                                    <a class="dropdown-item" href="{{ url('browse/categories') }}">Browse Categories</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {{ (Request::is('how-it-works') ? 'active' : '') }}">
                                 <a class="nav-link" href="{{ url('/how-it-works') }}">How it Works</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/pricing') }}">Pricing</a>
+                            <li class="nav-item {{ (Request::is('pricing') ? 'active' : '') }}">
+                                <a class="nav-link" href="{{ url('pricing') }}">Pricing</a>
                             </li>
                         </ul>
 
